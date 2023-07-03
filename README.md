@@ -1,59 +1,40 @@
-##Java Spring Boot CRUD Application
-This README provides an overview and setup instructions for a Java Spring Boot CRUD (Create, Read, Update, Delete) application. This application allows you to perform basic CRUD operations on a database using the Java Spring Boot framework.
+# Java Spring Boot CRUD Application with MongoDB
 
-Prerequisites
+This README provides an overview and setup instructions for a Java Spring Boot CRUD (Create, Read, Update, Delete) application with MongoDB as the database. This application allows you to perform basic CRUD operations on a MongoDB database using the Java Spring Boot framework.
+
+## Prerequisites
+
 Before you begin, make sure you have the following installed on your system:
 
-Java Development Kit (JDK) 8 or higher
-Apache Maven
-An IDE (Integrated Development Environment) such as IntelliJ IDEA or Eclipse
-MySQL or any other relational database management system
-Getting Started
-To set up and run the Java Spring Boot CRUD application, follow these steps:
+- Java Development Kit (JDK) 8 or higher
+- Apache Maven
+- An IDE (Integrated Development Environment) such as IntelliJ IDEA or Eclipse
+- MongoDB
 
-Clone the repository or download the source code.
+## Getting Started
 
-Import the project into your IDE as a Maven project.
+To set up and run the Java Spring Boot CRUD application with MongoDB, follow these steps:
 
-Configure the database connection properties in the application.properties file. You can find this file in the src/main/resources directory. Modify the following properties to match your database configuration:
+1. Clone the repository or download the source code.
 
-properties
-Copy code
-spring.datasource.url=jdbc:mysql://localhost:3306/db_name
-spring.datasource.username=db_username
-spring.datasource.password=db_password
-Build the project using Maven to download the required dependencies:
+2. Import the project into your IDE as a Maven project.
 
-bash
-Copy code
-mvn clean install
-Run the application using Maven:
+3. Configure the MongoDB connection properties in the `application.properties` file. You can find this file in the `src/main/resources` directory. Modify the following properties to match your MongoDB configuration:
 
-bash
-Copy code
-mvn spring-boot:run
-Alternatively, you can run the application from your IDE by executing the main class (CrudApplication.java).
+   ```properties
+    spring.data.mongodb.uri=mongodb+srv://admin:<password>@javadb.aolhy7e.mongodb.net/?retryWrites=true&w=majority
+    spring.data.mongodb.database=kruDatabase
 
-Once the application is running, you can access the endpoints using a tool like Postman or any web browser.
-
-API Endpoints
+# API Endpoints
 The CRUD application provides the following RESTful API endpoints:
 
-GET /api/users: Retrieves a list of all users.
-GET /api/users/{id}: Retrieves a specific user by ID.
-POST /api/users: Creates a new user.
-PUT /api/users/{id}: Updates an existing user by ID.
-DELETE /api/users/{id}: Deletes a user by ID.
+- GET /contacts: Retrieves a list of all contact.
+- GET /contacts/{id}: Retrieves a specific contact by ID.
+- POST /contacts: Creates a new contact.
+- PUT /contacts/{id}: Updates an existing contact by ID.
+- DELETE /contacts/{id}: Deletes a contact by ID.
+  
 You can test these endpoints using the appropriate HTTP methods.
 
-Customization and Extension
-You can customize and extend the CRUD application according to your requirements. Some possible enhancements include:
-
-Adding additional fields to the user entity or creating new entities.
-Implementing validation logic for input data.
-Adding pagination or sorting functionality to the user retrieval endpoint.
-Implementing security features such as authentication and authorization.
-Feel free to explore the project structure and modify the code to suit your needs.
-
-Conclusion
-This README provides a basic overview of a Java Spring Boot CRUD application. Follow the instructions to set up the project, configure the database, and run the application. You can further customize and extend the application to meet your specific requirements. Happy coding!
+# Conclusion
+This README provides a basic overview of a Java Spring Boot CRUD application with MongoDB. Follow the instructions to set up the project, configure the MongoDB connection, and run the application. You can further customize and extend the application to meet your specific requirements. Happy coding!
