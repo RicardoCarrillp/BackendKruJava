@@ -21,15 +21,16 @@ public class ContactService {
         return contactRepository.findById(id).get();
     }
     public Contact save(ContactDto dto){
-        Contact contact=new Contact(dto.getName(),
+        Contact contact=new Contact(
+                dto.getId(),
+                dto.getName(),
                 dto.getLastName(),
                 dto.getEmail(),
                 dto.getPhone(),
                 dto.getBirthday(),
                 dto.getAddress(),
                 dto.getTypeContact(),
-                dto.getOrigin(),
-                dto.getId()
+                dto.getOrigin()
                 );
 
         return contactRepository.save(contact);
