@@ -28,7 +28,8 @@ public class ContactService {
                 dto.getBirthday(),
                 dto.getAddress(),
                 dto.getTypeContact(),
-                dto.getOrigin()
+                dto.getOrigin(),
+                dto.getId()
                 );
 
         return contactRepository.save(contact);

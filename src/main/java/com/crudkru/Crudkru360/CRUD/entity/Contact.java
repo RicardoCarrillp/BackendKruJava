@@ -4,6 +4,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document(collection = "contacts")
 public class Contact {
+    private String _id;
     private String name;
     private String lastName;
     private String email;
@@ -27,6 +28,14 @@ public class Contact {
 
     public String getLastName() {
         return lastName;
+    }
+
+    public String get_id() {
+        return _id;
+    }
+
+    public void set_id(String _id) {
+        this._id = _id;
     }
 
     public void setLastName(String lastName) {
@@ -81,7 +90,8 @@ public class Contact {
         this.origin = origin;
     }
 
-    public Contact( String name, String lastName, String email, String phone, String birthday, String address, String typeContact, String origin) {
+    public Contact( String _id,String name, String lastName, String email, String phone, String birthday, String address, String typeContact, String origin) {
+        this._id = _id;
         this.name = name;
         this.lastName = lastName;
         this.email = email;

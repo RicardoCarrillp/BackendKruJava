@@ -4,6 +4,15 @@ import org.springframework.data.annotation.Id;
 
 public class ContactDto {
 
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    private String id;
     private String name;
     private String lastName;
     private String email;
